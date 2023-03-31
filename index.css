@@ -9,7 +9,7 @@
 
 header, footer {
   display: flex;
-  background: #000;
+  background: whitesmoke;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
@@ -20,7 +20,7 @@ header, footer {
 }
 
 .content h2 {
-  color: #fff;
+  color: #06d7fc;
   font-size: 5em;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -28,11 +28,11 @@ header, footer {
 
 .content h2:nth-child(1) {
   color: transparent;
-  -webkit-text-stroke: 2px #03a9f4;
+  -webkit-text-stroke: 2px #2f03a8;
 }
 
 .content h2:nth-child(2) {
-  color: #03a9f4;
+  color: #2f03a8;
   animation: animate 4s ease-in-out infinite;
 }
 
@@ -75,81 +75,78 @@ header, footer {
   body {
     font-family: Arial, sans-serif;
   }
-  nav {
-    background: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  #menu__toggle {
+    opacity: 0;
   }
-  nav .mainMenu {
-    display: flex;
+  #menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    left: 0 !important;
+  }
+  .menu__btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+    transition-duration: .25s;
+  }
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+  .menu__box {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
     list-style: none;
+    background-color: #ECEFF1;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    transition-duration: .25s;
   }
-  nav .mainMenu li a {
-    display: inline-block;
-    padding: 15px;
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
     text-decoration: none;
-    text-transform: uppercase;
-    color: rgb(255, 255, 255);
-    font-size: 18px;
-    transition: 0.2s ease;
+    transition-duration: .25s;
   }
-  nav .mainMenu li a:hover {
-    background: rgb(255, 94, 0);
+  .menu__item:hover {
+    background-color: #CFD8DC;
   }
-  nav .openMenu {
-    font-size: 2rem;
-    margin: 20px;
-    display: none;
-    cursor: pointer;
-  }
-  nav .mainMenu .closeMenu,
-  .icons i {
-    font-size: 2rem;
-    display: none;
-    cursor: pointer;
-  }
-
-  nav .logo {
-    margin: 6px;
-    cursor: pointer;
-    text-transform: uppercase;
-  }
-  @media (max-width: 800px) {
-    nav .mainMenu {
-      height: 100vh;
-      position: fixed;
-      top: 0px;
-      right: 0px;
-      left: 0px;
-      z-index: 10;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: rgb(0, 0, 0);
-      transition: top 1s ease 0s;
-      display: none;
-    }
-    nav .mainMenu .closeMenu {
-      display: block;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-    nav .openMenu {
-      display: block;
-    }
-    nav .mainMenu li a:hover {
-      background: none;
-      color: rgb(255, 123, 0);
-    }
-    .icons i {
-      display: inline-block;
-      padding: 12px;
-    }
-  }
-  
+     
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
 
@@ -162,8 +159,8 @@ header, footer {
 
 header, footer {
   display: flex;
-  background: #000;
-  min-height: 40vh;
+  background: whitesmoke;
+  min-height: 32.5vh;
   align-items: center;
   justify-content: center;
 }
@@ -173,7 +170,7 @@ header, footer {
 }
 
 .content h2 {
-  color: #fff;
+  color: #06d7fc;
   font-size: 2.9em;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -181,11 +178,11 @@ header, footer {
 
 .content h2:nth-child(1) {
   color: transparent;
-  -webkit-text-stroke: 2px #03a9f4;
+  -webkit-text-stroke: 2px #2f03a8;
 }
 
 .content h2:nth-child(2) {
-  color: #03a9f4;
+  color: #2f03a8;
   animation: animate 4s ease-in-out infinite;
 }
 
@@ -243,10 +240,10 @@ html, body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: #00BAF0;
-  background: linear-gradient(to left, #03a9f4, #03a9f4);
+  background-color: #2f03a8;
+  background: linear-gradient(to left, #e8e4f1, #b7d1ef);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  color: #FFF;
+  color: #13035a;
   height: 50px;
   padding: 1em;
 }
